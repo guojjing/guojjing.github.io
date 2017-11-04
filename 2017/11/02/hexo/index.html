@@ -93,7 +93,7 @@
 <meta property="og:image" content="https://i.ooxx.ooo/2017/10/20/1d065f21b4246464e12a8b11bb1132ea.png">
 <meta property="og:image" content="https://i.ooxx.ooo/2017/10/20/905dc115ba5cb20aade21701d526b73d.png">
 <meta property="og:image" content="https://i.ooxx.ooo/2017/10/20/29d6ad00ebebc54cc4fe23eaefbe2c05.png">
-<meta property="og:updated_time" content="2017-11-04T01:21:55.626Z">
+<meta property="og:updated_time" content="2017-11-04T02:32:30.322Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hexo">
 <meta name="twitter:description" content="磕磕绊绊的，总算把博客弄出来啊，回想之前的种种，真是一把辛酸泪啊。那么。就把这个过程做成一个教程，记录一下吧！ 成功率90%以上！成功率90%以上！成功率90%以上！重要的时候要说三遍！！！">
@@ -365,41 +365,65 @@
 <li>在除了c盘的随便一个盘的位置创建一个名为blog的文件夹。</li>
 <li>在blog里右击Git Bash Here</li>
 <li>输入npm install -g hexo ，下载hexo,网速不好会出现ERR错误，重试就好。成功示例:<br><img src="https://i.ooxx.ooo/2017/10/20/62bf1896a1ddc83d9b9263471a8b4a45.png" alt="成功示例"><br>下同。</li>
-<li>输入hexo init 下载hexo的初始化文件</li>
-<li>输入npm install 安装本地博客所需插件</li>
-<li>输入npm install hexo-deployer-git –-save 安装hexo部署程序</li>
-<li>输入hexo generate 缩写 hexo g  生成静态页面至public目录</li>
-<li>输入hexo server 开启本地预览访问端口(localhost:4000  “ctrl + c” 关闭server)</li>
-<li>打开blog文件夹中的_config.yaml文件，下滑到最后，修改配置为：type: git<br>repo: git@github.com:xxxx/xxxx.github.io.git<br>branch: master </li>
+<li><p>输入hexo init 下载hexo的初始化文件</p>
+</li>
+<li><p>输入npm install 安装本地博客所需插件</p>
+</li>
+<li><p>输入npm install hexo-deployer-git –-save 安装hexo部署程序</p>
+</li>
+<li><p>输入hexo generate 缩写 hexo g  生成静态页面至public目录</p>
+</li>
+<li><p>输入hexo server 开启本地预览访问端口(localhost:4000  “ctrl + c” 关闭server)</p>
+</li>
+<li><p>打开blog文件夹中的_config.yaml文件，下滑到最后，<br>修改配置为：<br>type: git<br>repo: git@github.com:xxxx/xxxx.github.io.git<br>branch: master </p>
+</li>
 </ul>
 <p><strong>设置ssh密钥</strong></p>
 <ul>
-<li>如果已经有了密钥，则直接删除.ssh文件夹中的所有文件，重新获取密钥（如果绑有重要网站的，慎重决定）</li>
-<li>如果不想删除，验证一下ssh，如果有效，就使用当前ssh key,输入ssh -T git@github.com ，回复yes<br>成功示例:<br><img src="https://i.ooxx.ooo/2017/10/20/9099cd3623dc123b7aabb5df0d57d5bd.png" alt="成功案例"></li>
-<li>重获密钥，ssh-keygen -t rsa -C “邮箱” 一路回车</li>
-<li>输入ssh-agent -s</li>
-<li>输入ssh-add ~/.ssh/id_rsa如果出现如下错误示例:<br><img src="https://i.ooxx.ooo/2017/10/20/355c02b7b70dddb0d66c820c4e1953a4.png" alt="错误案例"><br>则继续输入 eval `ssh-agent -s`   ，再输入ssh-add<br>成功示例:<br><img src="https://i.ooxx.ooo/2017/10/20/1d065f21b4246464e12a8b11bb1132ea.png" alt="成功案例"></li>
-<li>输入cat ~/.ssh/id_rsa.pub 导出密钥</li>
-<li>在github中，点击右上角头像，点击setting</li>
-<li>点击ssh key中的add keys，添加。</li>
-<li>输入ssh -T git@github.com ，回复yes验证密钥</li>
+<li><p>如果已经有了密钥，则直接删除.ssh文件夹中的所有文件，重新获取密钥（如果绑有重要网站的，慎重决定）</p>
+</li>
+<li><p>如果不想删除，验证一下ssh，如果有效，就使用当前ssh key,输入ssh -T git@github.com ，回复yes<br>成功示例:<br><img src="https://i.ooxx.ooo/2017/10/20/9099cd3623dc123b7aabb5df0d57d5bd.png" alt="成功案例"></p>
+</li>
+<li><p>重获密钥，ssh-keygen -t rsa -C “邮箱” 一路回车</p>
+</li>
+<li><p>输入ssh-agent -s</p>
+</li>
+<li><p>输入ssh-add ~/.ssh/id_rsa如果出现如下错误示例:<br><img src="https://i.ooxx.ooo/2017/10/20/355c02b7b70dddb0d66c820c4e1953a4.png" alt="错误案例"><br>则继续输入 eval `ssh-agent -s`   ，再输入ssh-add<br>成功示例:<br><img src="https://i.ooxx.ooo/2017/10/20/1d065f21b4246464e12a8b11bb1132ea.png" alt="成功案例"></p>
+</li>
+<li><p>输入cat ~/.ssh/id_rsa.pub 导出密钥</p>
+</li>
+<li><p>在github中，点击右上角头像，点击setting</p>
+</li>
+<li><p>点击ssh key中的add keys，添加。</p>
+</li>
+<li><p>输入ssh -T git@github.com ，回复yes验证密钥</p>
+</li>
 </ul>
 <p><strong>完成部署</strong></p>
 <ul>
-<li>输入hexo g</li>
-<li>输入hexo d</li>
-<li>最后在浏览器输入 用户名.github.io 成功示例:<br><img src="https://i.ooxx.ooo/2017/10/20/905dc115ba5cb20aade21701d526b73d.png" alt="成功访问"></li>
+<li><p>输入hexo g</p>
+</li>
+<li><p>输入hexo d</p>
+</li>
+<li><p>最后在浏览器输入 用户名.github.io 成功示例:<br><img src="https://i.ooxx.ooo/2017/10/20/905dc115ba5cb20aade21701d526b73d.png" alt="成功访问"></p>
+</li>
 </ul>
 <p><strong>上传博客</strong></p>
 <ul>
-<li>在blog文件的_config.yaml文件中配置博客的标题等信息示例：<br><img src="https://i.ooxx.ooo/2017/10/20/29d6ad00ebebc54cc4fe23eaefbe2c05.png" alt="如图"></li>
-<li>然后hexo常用的几个命令</li>
+<li><p>在blog文件的_config.yaml文件中配置博客的标题等信息示例：<br><img src="https://i.ooxx.ooo/2017/10/20/29d6ad00ebebc54cc4fe23eaefbe2c05.png" alt="如图"></p>
+</li>
+<li><p>然后hexo常用的几个命令</p>
+</li>
 </ul>
 <ol>
-<li>hexo new “文件名” 在blog\source_posts中，创建新的md文件</li>
-<li>hexo clean 清理文件，为上传博客做基础</li>
-<li>hexo g 在public中生成目标的html</li>
-<li>hexo d 发布博客</li>
+<li><p>hexo new “文件名” 在blog\source_posts中，创建新的md文件</p>
+</li>
+<li><p>hexo clean 清理文件，为上传博客做基础</p>
+</li>
+<li><p>hexo g 在public中生成目标的html</p>
+</li>
+<li><p>hexo d 发布博客</p>
+</li>
 </ol>
 <p><strong>输入自己的网址看效果</strong></p>
 <h2 id="在部署完博客后，可能没有立即出现预期效果，等一会刷新或者换别的浏览器、电脑就好。"><a href="#在部署完博客后，可能没有立即出现预期效果，等一会刷新或者换别的浏览器、电脑就好。" class="headerlink" title="在部署完博客后，可能没有立即出现预期效果，等一会刷新或者换别的浏览器、电脑就好。"></a>在部署完博客后，可能没有立即出现预期效果，等一会刷新或者换别的浏览器、电脑就好。</h2>
@@ -441,6 +465,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/11/04/MarkDown/" rel="prev" title="MarkDown">
+                MarkDown <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -521,7 +549,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -543,7 +571,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-count">2</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
